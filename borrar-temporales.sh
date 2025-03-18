@@ -26,7 +26,7 @@ for usuario in "${USUARIOS[@]}"; do
             echo "Este directorio $DIR_ACTUAL No existe, nos lo saltamos."
         fi
     done
-    # quitando los recientes para cada usuario que acabo de cambiar 
+    # quitando los recientes para cada usuario
     RECENT_FILES_DIR="/home/$usuario/.local/share"
     if [ -f "$RECENT_FILES_DIR/recently-used.xbel" ]; then
         echo "quitando los ficheros temporales del $usuario..."

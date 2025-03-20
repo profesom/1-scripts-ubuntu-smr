@@ -3,6 +3,7 @@
 # Definimos los usuarios a los que vamos a eliminar los ficheros
 USUARIOS=("alumnosmrd" "alumnosmrv")
 # Definimos todos los directorios que queremos tocar, en español o inglés
+# Los directorios /home/usuario/pruebas y /home/usuario/examen se usarán para las pruebas diarias.
 # El directorio: pt es para el packet tracer
 # El directorio pruebas y examen los uso para SOM y AOF
 DIRECTORIOS=("Imágenes" "Images" "Descargas" "Downloads" "Documentos" "Documents" "Music" "Música" "Trash" "Recientes" "pt" "Vídeos" "Videos" "pruebas" "examen" "Desktop" "Escritorio")
@@ -37,6 +38,10 @@ for usuario in "${USUARIOS[@]}"; do
     # quitamos los ficheros específicos del home de cada usuario
     HOME_DIR="/home/$usuario"
     echo "quitando los ficheros específicos de $HOME_DIR..."
+    # quitamos los ficheros adicionales del /home de cada usuario:
+    # actualmente quitamos: pdf, txt, doc, docx, xls, xlsx, ppt, pptx, 
+    # actualmente quitamos: odt, odf, ods, .sh, .db, .bd, 
+    # actualmente quitamos: pka, pkt, html
     find "$HOME_DIR" -maxdepth 1 -type f \( -name "*.pdf" -o -name "*.txt" -o -name "*.doc" -o -name "*.docx" -o -name "*.xls" -o -name "*.xlsx" -o -name "*.ppt" -o -name "*.pptx" -o -name "*.odt" -o -name "*.odf" -o -name "*.ods" -o -name "*.sh" -o -name "*.db" -o -name "*.pka" -o -name "*.html" -o -name "*.pkt" -o -name "*.bd" \) -delete
     echo "Listo los específicos para $HOME_DIR"
 

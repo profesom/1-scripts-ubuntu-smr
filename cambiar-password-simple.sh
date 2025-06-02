@@ -11,7 +11,7 @@
 usuario_remoto=profesor
 
 #este sería el login remoto, mejor dejarlo como "profesor", que ya está bien configurado
-nueva_password=Karpant@7
+nueva_password="loquequieras"
 
 #este sería el login que usamos en el remoto
 login_remoto=profesor@192.168.1.122
